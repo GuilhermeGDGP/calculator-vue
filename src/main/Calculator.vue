@@ -1,9 +1,23 @@
 <template>
     <div class="calculator">
-        <Display />
-        <Button />
-        <Button />
-        <Button />
+        <Display value="1000" />
+        <Button label="AC" triple @onClick="clearMemory" />
+        <Button label="/" operation @onClick="setOperation" />
+        <Button label="7" @onClick="addDigit" />
+        <Button label="8" @onClick="addDigit" />
+        <Button label="9" @onClick="addDigit" />
+        <Button label="*" operation @onClick="setOperation" />
+        <Button label="4" @onClick="addDigit" />
+        <Button label="5" @onClick="addDigit" />
+        <Button label="6" @onClick="addDigit" />
+        <Button label="-" operation @onClick="setOperation" />
+        <Button label="1" @onClick="addDigit" />
+        <Button label="2" @onClick="addDigit" />
+        <Button label="3" @onClick="addDigit" />
+        <Button label="+" operation @onClick="setOperation" />
+        <Button label="0" @onClick="addDigit" double />
+        <Button label="." @onClick="addDigit" />
+        <Button label="=" operation @onClick="setOperation" />
     </div>
 </template>
 
@@ -12,7 +26,18 @@ import Display from "../components/Display"
 import Button from "../components/Button"
 
 export default {
-    components: { Button, Display }
+    components: { Button, Display },
+    methods: {
+        clearMemory() {
+            console.log("Limpar memória!")
+        },
+        setOperation(operation) {
+            console.log("Operação", operation)
+        },
+        addDigit(n) {
+            console.log("Digito", n)
+        }
+    }
 }
 </script>
 
